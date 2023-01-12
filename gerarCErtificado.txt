@@ -1,0 +1,11 @@
+////gerando chave 
+
+openssl genrsa -out key.pem
+
+////gerando certificado 
+
+openssl req -new -key key.pem -out c
+sr.pem
+
+///assinando certificado 
+openssl x509 -req -days 365 -in csr.pem -signkey key.pem -out cert.pem
